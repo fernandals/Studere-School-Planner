@@ -1,0 +1,10 @@
+source venv/bin/activate 
+
+python app.py
+
+/your_project
+    ├── app.py
+    ├── routes.py
+    ├── models.py
+    ├── requirements.txt
+    └── __init__.py
