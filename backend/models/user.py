@@ -15,6 +15,5 @@ class User(Base):
     password = Column(String)
     full_name = Column(String)
 
-    tasks = relationship("Task", back_populates="user")
-    assignments = relationship("Assignment", back_populates="user")
+    courses = relationship("Course", back_populates="user")
     created_at = Column(DateTime, server_default="now()")

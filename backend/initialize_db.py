@@ -1,5 +1,6 @@
 from db.session import Base, engine
 from models.assignment import Assignment  # noqa
+from models.course import Course  # noqa
 from models.task import Task  # noqa
 from models.user import User  # noqa
 

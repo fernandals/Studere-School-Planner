@@ -14,15 +14,8 @@ class Task(Base):
     title = Column(String, nullable=False)
     description = Column(String)
 
-    # Column to reference the user
-    user_id = Column(
-        UUID(as_uuid=True), ForeignKey("users.id")
-    )  # Foreign key to the users table
-
-    # Relationship with the User model
-    user = relationship(
-        "User", back_populates="tasks"
-    )  # Relationship with the User model
+    course_id = Column(UUID(as_uuid=True), ForeignKey("courses.id"))
+    course = relationship("Course", back_populates="tasks")
 
     completed_at = Column(DateTime)
     created_at = Column(DateTime, server_default="now()")
