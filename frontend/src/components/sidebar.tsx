@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import styles from '../styles/sidebar.module.css';
+import styles from '@/styles/sidebar.module.css';
 import appLogo from '../../public/images/icon.png'; 
 
 const Sidebar = () => {

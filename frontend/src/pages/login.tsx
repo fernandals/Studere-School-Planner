@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import styles from '../styles/login.module.css';
+import styles from '@/styles/login.module.css';
 import appIcon from '../../public/images/icon.png'; 
 
 const Login = () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Sidebar from '../components/sidebar';
+import Sidebar from '@/components/sidebar';
 
-import styles from 'main.module.css';
+import styles from '@/styles/main.module.css';
 
 const Home = () => {
     return (

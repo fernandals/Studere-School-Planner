@@ -1,0 +1,14 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2em 5em; /* Increased space between cards */
+  padding: 1em; /* Padding around the grid itself */
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .gridContainer {
+      grid-template-columns: 1fr;
+  }
+}

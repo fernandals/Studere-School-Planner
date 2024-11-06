@@ -1,0 +1,65 @@
+.courseCard {
+  width: 100%;
+  max-width: 400px;
+  padding: 1.5em;
+  margin: 0em; /* Extra space around each card */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.cardHeader {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+.courseName {
+  font-size: 1.5em;
+  color: #333;
+  margin: 0;
+}
+
+.courseSchedule, .courseRoom {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0.2em 0;
+}
+
+.mainSection {
+  padding-top: 1em;
+}
+
+.assignments, .studyPlans {
+  margin-bottom: 1em;
+}
+
+.assignments h3, .studyPlans h3 {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+  color: #444;
+}
+
+.assignments ul, .studyPlans ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.assignments li, .studyPlans li {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 0.3em;
+  padding-left: 0.5em;
+  position: relative;
+}
+
+.assignments li::before, .studyPlans li::before {
+  content: '•';
+  color: #FF5733;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
