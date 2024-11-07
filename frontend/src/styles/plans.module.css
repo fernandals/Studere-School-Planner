@@ -1,0 +1,80 @@
+/* StudyPlanGenerator.module.css */
+
+.studyPlanGenerator {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  color: #333;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.instructions {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.themeTextbox {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  /*resize: none;*/
+  transition: border-color 0.3s ease;
+}
+
+.themeTextbox:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.generateButton {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.generateButton:hover {
+  background-color: #0056b3;
+}
+
+.studyPlanResult {
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.studyPlanResult h3 {
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.studyPlanResult p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}

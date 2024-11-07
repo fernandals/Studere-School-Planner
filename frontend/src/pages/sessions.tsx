@@ -55,7 +55,7 @@ const Sessions = () => {
     return (
       <div style={{ display: 'flex' }}>
         <Sidebar />
-        <main style={{ marginLeft: '250px', padding: '20px', flex: '1' }}>
+        <main style={{ marginLeft: '200px', padding: '20px', flex: '1' }}>
           
         <div className={styles.container}>
           <h1 className={styles.header}>Study Session</h1>
