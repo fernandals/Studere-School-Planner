@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import Column, DateTime, ForeignKey, String
+from sqlalchemy import Column, ForeignKey, String, Text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
@@ -12,11 +12,14 @@ class Course(Base):
 
     id = Column(UUID(as_uuid=True), primary_key=True, index=True, default=uuid.uuid4)
     name = Column(String, nullable=False)
+    description = Column(Text)
 
-    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"))
+    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id", ondelete="CASCADE"))
     user = relationship("User", back_populates="courses")
 
-    assignments = relationship("Assignment", back_populates="course")
-    tasks = relationship("Task", back_populates="course")
-
-    created_at = Column(DateTime, server_default="now()")
+    assignments = relationship(
+        "Assignment", back_populates="course", cascade="all, delete-orphan"
+    )
+    plans = relationship(
+        "StudyPlan", back_populates="course", cascade="all, delete-orphan"
+    )

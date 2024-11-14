@@ -23,25 +23,26 @@ def create_assignment(
     assignment_service = AssignmentService(db)
     assignment = assignment_service.create_assignment(
         title=body.title,
+        type=body.type,
         description=body.description,
         course_id=body.course_id,
         current_user_id=current_user.id,
         due_at=body.due_at,
+        score=body.score,
     )
     return assignment
 
 
-@router.get("")
+@router.get("", response_model=list[AssignmentResponse])
 def list_assignments(
     db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
 ):
     assignment_service = AssignmentService(db)
     assignments = assignment_service.list_assignments(current_user.id)
-
     return assignments
 
 
-@router.get("/{assignment_id}")
+@router.get("/{assignment_id}", response_model=AssignmentResponse)
 def get_assignment(
     assignment_id: str,
     db: Session = Depends(get_db),
@@ -49,11 +50,10 @@ def get_assignment(
 ):
     assignment_service = AssignmentService(db)
     assignment = assignment_service.retrieve_assignment(assignment_id, current_user.id)
-
     return assignment
 
 
-@router.put("/{assignment_id}")
+@router.put("/{assignment_id}", response_model=AssignmentResponse)
 def update_assignment(
     assignment_id: str,
     body: AssignmentCreateUpdate,
@@ -61,19 +61,20 @@ def update_assignment(
     current_user: User = Depends(get_current_user),
 ):
     assignment_service = AssignmentService(db)
-
     assignment = assignment_service.update_assignment(
         assignment_id=assignment_id,
         course_id=body.course_id,
         title=body.title,
+        type=body.type,
         description=body.description,
         due_at=body.due_at,
+        score=body.score,
         current_user_id=current_user.id,
     )
     return assignment
 
 
-@router.patch("/{assignment_id}")
+@router.patch("/{assignment_id}", response_model=AssignmentResponse)
 def partial_update_assignment(
     assignment_id: str,
     body: AssignmentPartialUpdate,
@@ -85,8 +86,10 @@ def partial_update_assignment(
         assignment_id=assignment_id,
         course_id=body.course_id,
         title=body.title,
+        type=body.type,
         description=body.description,
         due_at=body.due_at,
+        score=body.score,
         current_user_id=current_user.id,
     )
     return assignment
@@ -99,5 +102,4 @@ def delete_assignment(
     current_user: User = Depends(get_current_user),
 ):
     assignment_service = AssignmentService(db)
-
     assignment_service.delete_assignment(assignment_id, current_user.id)

@@ -1,7 +1,6 @@
 from sqlalchemy.orm import Session
 
-from core.singleton import SingletonMeta
 
-class BaseRepository(metaclass=SingletonMeta):
+class BaseRepository:
     def __init__(self, db: Session):
         self.db = db
