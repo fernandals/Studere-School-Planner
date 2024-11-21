@@ -8,14 +8,22 @@
 }
 
 .logo {
-  justify-content: center;
-  text-align: left;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
 }
 
 .icon {
   width: 40px;
   height: 40px;
+  margin-right: 15px;
+}
+
+.appName {
+  color: white; /* Makes the text white */
+  font-size: 25px; /* Adjust to your preference */
+  font-weight: bold; /* Makes the text bold for better visibility */
+  font-family: 'Roboto', sans-serif; /* Choose a clean, modern font */
 }
 
 .navigation {
@@ -27,7 +35,7 @@
 .button {
   width: 100%;
   padding: 15px;
-  margin: 10px 0;
+  margin: 5px 0;
   background-color: #2C3E50ff; /* Blue button color */
   color: white;
   border: none;
@@ -38,4 +46,21 @@
 
 .button:hover {
   background-color: #819595ff;
+}
+
+.userInfo {
+  bottom: 0;
+  text-align: center;
+  padding: 40px;
+}
+
+.email {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.email:hover {
+  
 }
