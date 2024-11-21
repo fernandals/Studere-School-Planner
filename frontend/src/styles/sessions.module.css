@@ -1,3 +1,42 @@
+.content {
+  font-family: Arial, sans-serif;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.newSessionBtt {
+  width: fit-content; /* Adjust width dynamically to content */
+  padding: 12px 20px; /* Add balanced padding */
+  font-size: 16px; /* Keep text size readable */
+  font-weight: bold; /* Make the text stand out */
+  background-color: #28a745; /* Keep the green, but improve hover */
+  color: white; /* Contrast text color */
+  border: none; /* Clean look */
+  border-radius: 8px; /* Smooth, modern corners */
+  cursor: pointer; /* Show pointer on hover */
+  margin-left: auto; /* Align to the right */
+  margin-right: 0; /* Ensure proper positioning */
+  display: block; /* Ensure the margin-left works */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle depth */
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover animations */
+}
+
+.newSessionBtt:hover {
+  background-color: #218838; /* Slightly darker green */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+
+
+/*
 .container {
   padding: 20px;
   max-width: 600px;
@@ -5,10 +44,6 @@
   font-family: Arial, sans-serif;
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 20px;
-}
 
 .form {
   display: flex;
@@ -67,3 +102,5 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+*/
