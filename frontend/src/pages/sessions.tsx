@@ -15,22 +15,21 @@ const Sessions = () => {
   };
 
   //dont really know what to do
-  const handleAddSession = (newSession) => {
+  const handleAddSession = (newSession: any) => {
     setSessions((prev) => [...prev, newSession]);
   };
 
   const studySessions = [
-    { title: "Math Practice", plan: "Math", date: "2024-11-01", duration: 60 },
-    { title: "Physics Review", plan: "Physics", date: "2024-11-02", duration: 45 },
-    { title: "Chemistry Lab Prep", plan: "Chemistry", date: "2024-11-03", duration: 90 },
-    { title: "History Essay", plan: "History", date: "2024-11-04", duration: 120 },
-    { title: "History Essay", plan: "History", date: "2024-11-04", duration: 120 },
-    { title: "History Essay", plan: "History", date: "2024-11-04", duration: 120 },
-    { title: "History Essay", plan: "History", date: "2024-11-04", duration: 120 },
-    { title: "History Essay", plan: "History", date: "2024-11-04", duration: 120 },
-    { title: "History Essay", plan: "History", date: "2024-11-04", duration: 120 },
-    { title: "History Essay", plan: "History", date: "2024-11-04", duration: 120 },
-    { title: "History Essay", plan: "History", date: "2024-11-04", duration: 120 },
+    { title: "Math Practice", plan: "Algebra", date: "2024-11-01", startTime: "2024-11-01T14:00:00Z", endTime: "2024-11-01T15:00:00Z", duration: 60 },
+    { title: "Physics Review", plan: "Mechanics", date: "2024-11-02", startTime: "2024-11-02T16:30:00Z", endTime: "2024-11-02T17:15:00Z", duration: 45 },
+    { title: "Chemistry Lab Prep", plan: "Organic Chemistry", date: "2024-11-03", startTime: "2024-11-03T09:00:00Z", endTime: "2024-11-03T10:30:00Z", duration: 90 },
+    { title: "History Essay", plan: "World History", date: "2024-11-04", startTime: "2024-11-04T18:00:00Z", endTime: "2024-11-04T20:00:00Z", duration: 120 },
+    { title: "Biology Study", plan: "Genetics", date: "2024-11-05", startTime: "2024-11-05T13:00:00Z", endTime: "2024-11-05T14:30:00Z", duration: 90 },
+    { title: "English Essay", plan: "Literature", date: "2024-11-06", startTime: "2024-11-06T10:00:00Z", endTime: "2024-11-06T11:45:00Z", duration: 105 },
+    { title: "Programming Practice", plan: "Data Structures", date: "2024-11-07", startTime: "2024-11-07T15:30:00Z", endTime: "2024-11-07T17:00:00Z", duration: 90 },
+    { title: "Math Revision", plan: "Calculus", date: "2024-11-08", startTime: "2024-11-08T08:00:00Z", endTime: "2024-11-08T09:15:00Z", duration: 75 },
+    { title: "Physics Quiz Prep", plan: "Electromagnetism", date: "2024-11-09", startTime: "2024-11-09T11:00:00Z", endTime: "2024-11-09T12:00:00Z", duration: 60 },
+    { title: "Chemistry Review", plan: "Inorganic Chemistry", date: "2024-11-10", startTime: "2024-11-10T14:30:00Z", endTime: "2024-11-10T16:00:00Z", duration: 90 },
   ];
 
   const plans = [
