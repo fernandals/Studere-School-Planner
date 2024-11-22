@@ -5,13 +5,13 @@ import styles from '@/styles/sessionList.module.css';
 
 export default function SessionList({ sessions }) {
   const [filter, setFilter] = useState("");
-  const [courseFilter, setCourseFilter] = useState("all");
+  const [planFilter, setPlanFilter] = useState("all");
 
   // Filter sessions
   const filteredSessions = sessions.filter((session) => {
     const matchesFilter = session.title.toLowerCase().includes(filter.toLowerCase());
-    const matchesCourse = courseFilter === "all" || session.course === courseFilter;
-    return matchesFilter && matchesCourse;
+    const matchesPlan = planFilter === "all" || session.plan === planFilter;
+    return matchesFilter && matchesPlan;
   });
 
   return (
@@ -27,14 +27,14 @@ export default function SessionList({ sessions }) {
         />
 
         <select
-          value={courseFilter}
-          onChange={(e) => setCourseFilter(e.target.value)}
+          value={planFilter}
+          onChange={(e) => setPlanFilter(e.target.value)}
           className={styles.select}
         >
-          <option value="all">All Courses</option>
-          {[...new Set(sessions.map((s) => s.course))].map((course, index) => (
-            <option key={index} value={course}>
-              {course}
+          <option value="all">All Plans</option>
+          {[...new Set(sessions.map((s) => s.plan))].map((plan, index) => (
+            <option key={index} value={plan}>
+              {plan}
             </option>
           ))}
         </select>
@@ -48,7 +48,7 @@ export default function SessionList({ sessions }) {
             <SessionCard
               key={index}
               title={session.title}
-              course={session.course}
+              plan={session.plan}
               date={session.date}
               duration={session.duration}
             />
