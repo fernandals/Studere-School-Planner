@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import styles from '@/styles/addSessionModal.module.css';
 
 export default function SessionModal({ isOpen, onClose, onAdd, plans }) {

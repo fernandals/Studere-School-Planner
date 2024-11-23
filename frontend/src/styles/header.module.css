@@ -1,0 +1,35 @@
+/* header.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #ff6347; /* Tomato red for the bottom line */
+}
+
+.header__title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333; /* Neutral and clean title */
+}
+
+.header__button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff6347; /* Tomato red for the button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.header__button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth on hover */
+}
+
+.header__button:active {
+  transform: scale(0.95);
+}

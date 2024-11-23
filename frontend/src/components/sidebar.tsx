@@ -44,13 +44,11 @@ const Sidebar = () => {
             <button className={styles.button}>Calendar</button>
           </Link>
 
-          <Link href="/achievments">
-            <button className={styles.button}>Achievments</button>
-          </Link>
-
+          {/*
           <Link href="/settings">
             <button className={styles.button}>Settings</button>
           </Link>
+          */}
         </div>
 
         <div className={styles.userInfo}>

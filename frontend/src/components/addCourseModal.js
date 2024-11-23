@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import styles from '@/styles/addCourseModal.module.css';
 
 export default function AddCourseModal({ isOpen, onClose, onAdd }) {

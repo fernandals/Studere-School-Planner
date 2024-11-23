@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Sidebar from '@/components/sidebar';
+import Header from '@/components/header';
 
 import styles from '@/styles/plans.module.css';
 
@@ -9,7 +10,7 @@ const Plans = () => {
   const [studyPlan, setStudyPlan] = useState('');
 
   // Simulated fetchStudyPlan function to mock GPT response
-  const fetchStudyPlan = (theme) => {
+  const fetchStudyPlan = (theme: string) => {
     return new Promise((resolve) => {
       setTimeout(() => {
         // Mocking a study plan based on the theme input
@@ -38,29 +39,36 @@ const Plans = () => {
     return (
       <div style={{ display: 'flex' }}>
         <Sidebar />
-        <main style={{ marginLeft: '250px', padding: '20px', flex: '1' }}>
+        <main style={{ marginLeft: '200px', padding: '20px', flex: '1' }} className={styles.content}>
+
+          <Header 
+            title="Study Plans" 
+            buttonText={undefined} 
+            onButtonClick={undefined} 
+          />
+
           <div className={styles.studyPlanGenerator}>
-            <h2 className={styles.heading}>Generate Your Study Plan</h2>
-            <p className={styles.instructions}>
-              Describe the topic or focus of your study plan, and we’ll help you create a personalized study schedule.
-            </p>
-            <textarea
-              value={theme}
-              onChange={(e) => setTheme(e.target.value)}
-              placeholder="Enter the theme of your study plan"
-              className={styles.themeTextbox}
-            />
-            <button onClick={handleSubmit} className={styles.generateButton}>
-              Generate Study Plan
-            </button>
-            
-            {studyPlan && (
-              <div className={styles.studyPlanResult}>
-                <h3>Your Generated Study Plan</h3>
-                <p>{studyPlan}</p>
-              </div>
-            )}
-          </div>
+              <h2 className={styles.heading}>Generate Your Study Plan</h2>
+              <p className={styles.instructions}>
+                Describe the topic or focus of your study plan, and we’ll help you create a personalized study schedule.
+              </p>
+              <textarea
+                value={theme}
+                onChange={(e) => setTheme(e.target.value)}
+                placeholder="Enter the theme of your study plan"
+                className={styles.themeTextbox}
+              />
+              <button onClick={handleSubmit} className={styles.generateButton}>
+                Generate Study Plan
+              </button>
+              
+              {studyPlan && (
+                <div className={styles.studyPlanResult}>
+                  <h3>Your Generated Study Plan</h3>
+                  <p>{studyPlan}</p>
+                </div>
+              )}
+            </div>
 
         </main>
       </div>

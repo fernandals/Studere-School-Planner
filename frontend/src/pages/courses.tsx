@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import Sidebar from '@/components/sidebar';
+import Header from '@/components/header';
+
 import CourseList from '@/components/coursesList';
 import AddCourseModal from '@/components/addCourseModal';
 
@@ -73,17 +75,13 @@ const Courses = () => {
     return (
       <div style={{ display: 'flex' }}>
         <Sidebar />
-        
-        <main style={{ marginLeft: '200px', padding: '20px', flex: '1' }}>
+        <main style={{ marginLeft: '200px', padding: '20px', flex: '1' }} className={styles.content}>
           
-          
-          <div className={styles.pageContainer}>
-              <div className={styles.header}>
-                  <h1 className={styles.title}>My Courses</h1>
-
-                  <button className={styles.addButton} onClick={openModal}>+ Add New Course</button>
-              </div>              
-          </div>
+          <Header 
+            title="Courses" 
+            buttonText="Add New Course" 
+            onButtonClick={openModal} 
+          />
 
           <CourseList courses={sampleCourses} />;
 
@@ -92,8 +90,8 @@ const Courses = () => {
             onClose={closeModal} 
             onAdd={handleAddCourse}
           />
+          
         </main>
-      
       </div>
     );
 };

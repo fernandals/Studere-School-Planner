@@ -3,6 +3,7 @@ import React from 'react';
 import { Calendar as MyCalendar, dateFnsLocalizer } from 'react-big-calendar';
 
 import Sidebar from '@/components/sidebar';
+import Header from '@/components/header';
 
 import styles from '@/styles/calendar.module.css';
 
@@ -49,9 +50,11 @@ const Calendar = () => {
       <Sidebar />
       <main style={{ marginLeft: '200px', padding: '20px', flex: '1' }}>
         
-        <div className={styles.header}>
-          <h1 className={styles.title}>Calendar</h1>
-        </div>
+        <Header 
+          title="Calendar" 
+          buttonText={undefined} 
+          onButtonClick={undefined} 
+        />
 
         <div style={{ height: '80vh' }}>
           <MyCalendar

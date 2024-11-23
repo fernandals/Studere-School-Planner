@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import Sidebar from '@/components/sidebar';
+import Header from '@/components/header';
 import SessionList from "@/components/sessionList";
 import SessionModal from '@/components/addSessionModal'; // Import the modal
 
@@ -41,16 +42,13 @@ const Sessions = () => {
   return (
     <div style={{ display: 'flex' }}>
       <Sidebar />
-      <main style={{ marginLeft: '200px', padding: '20px', flex: '1' }}>
+      <main style={{ marginLeft: '200px', padding: '20px', flex: '1' }} className={styles.content}>
         
-      <div className={styles.content}>
-        <div className={styles.header}>
-          <h1 className={styles.title}>Sessions</h1>
-
-          <button className={styles.newSessionBtt} onClick={toggleModal}>
-            Create Session
-          </button>
-        </div>
+        <Header 
+          title="Sessions" 
+          buttonText="Create Session" 
+          onButtonClick={toggleModal} 
+        />
 
         <SessionModal 
           isOpen={isModalOpen} 
@@ -62,9 +60,7 @@ const Sessions = () => {
         <div style={{ padding: '50px', display: 'flex', justifyContent: 'center' }}>
           <SessionList sessions={studySessions} />
         </div>       
-        
-      </div>
-      
+              
       </main>
     </div>
   );
