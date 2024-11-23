@@ -29,12 +29,25 @@
 
 .actions {
   position: absolute;
-  top: 16px;  /* Distance from the top */
-  right: 16px; /* Distance from the right */
+  top: 19px;  /* Distance from the top */
+  right: 19px; /* Distance from the right */
   display: flex;
-  /*flex-direction: column;  se quiser que os icones fiquem empilhados*/ 
-  gap: 5px;
-  justify-content: right;
+  flex-direction: column;  /* Align buttons vertically */
+  gap: 10px;  /* Space between buttons */
+  justify-content: flex-start; /* Align the buttons from top */
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.toggleButton:focus {
+  outline: none;
 }
 
 .editButton,
@@ -77,17 +90,10 @@
 }
 
 .courseSchedule,
-.courseDescription {
+.courseDescription,
+.courseTerm {
   font-size: 0.9rem;
   color: #666;
-}
-
-.toggleButton {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
 .mainSection {

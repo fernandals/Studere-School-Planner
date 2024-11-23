@@ -4,7 +4,7 @@ import { FaPen, FaTrashAlt } from 'react-icons/fa';
 import styles from '@/styles/courseCard.module.css';
 
 export default function CourseCard({ course, onEdit, onDelete }) {
-    const { id, name, description, schedule, assignments, studyPlans } = course;
+    const { id, name, description, schedule, term, assignments, studyPlans } = course;
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleExpand = () => setIsExpanded(!isExpanded);
@@ -15,25 +15,23 @@ export default function CourseCard({ course, onEdit, onDelete }) {
             <div className={styles.cardHeader}>
 
                 <div className={styles.actions}>
-                    <button onClick={() => onEdit(id)} className={styles.editButton}>
+                    <button onClick={() => onEdit(course)} className={styles.editButton}>
                         <FaPen /> {/* Edit icon (pen) */}
                     </button>
                     <button onClick={() => onDelete(id)} className={styles.deleteButton}>
                         <FaTrashAlt /> {/* Delete icon (trash can) */}
                     </button>
+                    <button className={styles.toggleButton} onClick={toggleExpand}>
+                        {isExpanded ? '▲' : '▼'}
+                    </button>
                 </div>
 
                 <div className={styles.headerContent}>
-
-
                     <h2 className={styles.courseName}>{name}</h2>
                     <p className={styles.courseSchedule}>{schedule}</p>
+                    <p className={styles.courseTerm}>{term}</p>
                     <p className={styles.courseDescription}>{description}</p>
                 </div>
-
-                <button className={styles.toggleButton} onClick={toggleExpand}>
-                    {isExpanded ? '▲' : '▼'}
-                </button>
             </div>
 
             {/* Card Body - Conditionally Rendered */}

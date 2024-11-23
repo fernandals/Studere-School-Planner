@@ -2,24 +2,15 @@ import CourseCard from './courseCard';
 
 import styles from '@/styles/courseList.module.css';
 
-export default function CourseList({ courses }) {
-    
-    const handleEdit = (id) => {
-        console.log('Edit course with id:', id);
-    };
-
-    const handleDelete = (id) => {
-        setCourses(courses.filter(course => course.id !== id));
-    };
-
+export default function CourseList({ courses, onEdit, onDelete }) {
     return (
         <div className={styles.gridContainer}>
             {courses.map((course) => (
                 <CourseCard 
                     key={course.id}
                     course={course}
-                    onEdit={handleEdit}
-                    onDelete={handleDelete} />
+                    onEdit={onEdit}
+                    onDelete={onDelete} />
             ))}
         </div>
     );
