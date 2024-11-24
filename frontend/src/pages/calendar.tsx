@@ -5,8 +5,6 @@ import { Calendar as MyCalendar, dateFnsLocalizer } from 'react-big-calendar';
 import Sidebar from '@/components/sidebar';
 import Header from '@/components/header';
 
-import styles from '@/styles/calendar.module.css';
-
 import { format } from 'date-fns/format';
 import { parse } from 'date-fns/parse';
 import { startOfWeek } from 'date-fns/startOfWeek';
@@ -26,6 +24,7 @@ const localizer = dateFnsLocalizer({
 });
 
 const Calendar = () => {
+  // remove !
   const studySessions = [
     { title: "Math Practice", plan: "Algebra", date: "2024-11-01", startTime: "2024-11-01T14:00:00Z", endTime: "2024-11-01T15:00:00Z", duration: 60 },
     { title: "Physics Review", plan: "Mechanics", date: "2024-11-02", startTime: "2024-11-02T16:30:00Z", endTime: "2024-11-02T17:15:00Z", duration: 45 },
@@ -56,7 +55,7 @@ const Calendar = () => {
           onButtonClick={undefined} 
         />
 
-        <div style={{ height: '80vh' }}>
+        <div style={{ height: '80vh', marginTop: '30px' }}>
           <MyCalendar
             localizer={localizer}
             events={events}
