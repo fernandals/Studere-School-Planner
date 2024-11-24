@@ -2,83 +2,36 @@ import React, { useState } from 'react';
 
 import Sidebar from '@/components/sidebar';
 import Header from '@/components/header';
-
-import CourseList from '@/components/coursesList';
+import CourseList from '@/components/courseList';
 import CourseModal from '@/components/courseModal';
+import AssignmentModal from '@/components/assignmnetModal'
 
 import styles from '@/styles/courses.module.css';
 
-const coursesList = [
-  {
-    id: 1,
-    name: 'Mathematics 101',
-    description: 'An introductory course to fundamental mathematical concepts and problem-solving techniques.',
-    schedule: 'Mon 9:00 AM - 11:00 AM',
-    term: 'Fall 2024',
-    assignments: ['Assignment 1 - Due Nov 10', 'Assignment 2 - Due Nov 17'],
-    studyPlans: ['Focus on Chapter 2', 'Practice exercises for Quiz'],
-  },
-  {
-    id: 2,
-    name: 'Physics 201',
-    description: 'A comprehensive course on classical mechanics, including Newtonian physics and the laws of motion.',
-    schedule: 'Tue 10:00 AM - 12:00 PM',
-    term: 'Spring 2025',
-    assignments: ['Assignment 1 - Due Nov 12', 'Lab Report - Due Nov 18'],
-    studyPlans: ['Review Newton’s Laws', 'Prepare for Lab Experiment'],
-  },
-  {
-    id: 3,
-    name: 'Computer Science 101',
-    description: 'An introduction to computer science fundamentals, programming, and algorithms.',
-    schedule: 'Mon 1:00 PM - 3:00 PM',
-    term: 'Summer 2025',
-    assignments: ['Project 1 - Due Nov 15', 'Assignment 2 - Due Nov 22'],
-    studyPlans: ['Complete Programming Assignment', 'Study Sorting Algorithms'],
-  },
-  {
-    id: 4,
-    name: 'Biology 101',
-    description: 'An introductory course on biological concepts, including genetics, evolution, and ecology.',
-    schedule: 'Tue 9:00 AM - 11:00 AM',
-    term: 'Winter 2025',
-    assignments: ['Quiz 1 - Due Nov 13', 'Group Project - Due Nov 20'],
-    studyPlans: ['Study for Quiz 1', 'Research for Group Project'],
-  },
-  {
-    id: 5,
-    name: 'History 102',
-    description: 'A survey course covering key historical events from the Middle Ages to the Modern era.',
-    schedule: 'Mon 3:00 PM - 5:00 PM',
-    term: 'Fall 2024', // Looping back to the first term
-    assignments: ['Essay 1 - Due Nov 16', 'Presentation - Due Nov 23'],
-    studyPlans: ['Read Chapter 5', 'Prepare for Presentation'],
-  },
-];
-
-
-const terms = [
-  {name: "Fall 2024"},
-  {name: "Spring 2025"},
-  {name: "Summer 2025"},
-  {name: "Winter 2025"}
-]
+import mockCourses from "@/utils/mockCourses.json";
+import mockTerms from "@/utils/mockTerms.json";
 
 const Courses = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCourseModalOpen, setIsCourseModalOpen] = useState(false);
+  const [isAssignmentModalOpen, setIsAssignmentModalOpen] = useState(false);
+  const [assignemntModalMode, setAssignmentModalMode] = useState('create'); // 'create', 'edit', or 'view'
+
   const [courses, setCourses] = useState([]);
   const [currentCourse, setCurrentCourse] = useState(null); // To track which course is being edited
+  const [currentAssignment, setCurrentAssignment] = useState(null); // To track which assignment is being edited
 
-  const closeModal = () => setIsModalOpen(false);
+  const closeCourseModal = () => setIsCourseModalOpen(false);
+  const closeAssignmentModal = () => setIsAssignmentModalOpen(false);
 
+  {/* Course Utils */}
   const handleCreateCourse = () => {
     setCurrentCourse(null);
-    setIsModalOpen(true); // Open the modal for creating
+    setIsCourseModalOpen(true); // Open the modal for creating
   };
 
   const handleEditCourse = (course) => {
     setCurrentCourse(course);
-    setIsModalOpen(true); // Open the modal for editing
+    setIsCourseModalOpen(true); // Open the modal for editing
   };
 
   // no useful code yet
@@ -105,6 +58,44 @@ const Courses = () => {
     setCourses(courses.filter(course => course.id !== id));
   };
 
+  {/* Assignment Utils */}
+  const handleCreateAssignment = () => {
+    setAssignmentModalMode('create');
+    setCurrentAssignment(null);
+    setIsAssignmentModalOpen(true); // Open the modal for creating
+  };
+
+  const handleEditAssignment = (assignment) => {
+    setAssignmentModalMode('edit');
+    setCurrentAssignment(assignment);
+    setIsAssignmentModalOpen(true); // Open the modal for editing
+  };
+
+  const openViewModal = (assignment) => {
+    setAssignmentModalMode('view');
+    setCurrentAssignment(assignment);
+    setIsAssignmentModalOpen(true);
+};
+
+  const handleSaveAssignment = async (assignment) => {
+    try {
+        if (currentCourse) {
+            // Editing an existing course
+            const updatedCourse = await api.editCourse(currentCourse.id, courseData);
+            setCourses((prevCourses) =>
+                prevCourses.map((course) => (course.id === currentCourse.id ? updatedCourse : course))
+            );
+        } else {
+            // Creating a new course
+            const newCourse = await api.createCourse(courseData);
+            setCourses((prevCourses) => [...prevCourses, newCourse]);
+        }
+    } catch (err) {
+        console.error('Error saving course:', err);
+    }
+  };
+  
+
   return (
     <div style={{ display: 'flex' }}>
       <Sidebar />
@@ -117,17 +108,28 @@ const Courses = () => {
         />
 
         <CourseList 
-          courses={coursesList}
+          courses={mockCourses}
           onEdit={handleEditCourse}
           onDelete={handleDeleteCourse}
+          onCreateAss={handleCreateAssignment}
+          onEditAss={handleEditAssignment}
+          onViewAss={openViewModal}
         />
 
         <CourseModal
-          isOpen={isModalOpen}
-          onClose={closeModal}
+          isOpen={isCourseModalOpen}
+          onClose={closeCourseModal}
           onSave={handleSaveCourse}
           course={currentCourse}
-          terms={terms}
+          terms={mockTerms}
+        />
+
+        <AssignmentModal
+          isOpen={isAssignmentModalOpen}
+          onClose={closeAssignmentModal}
+          onSave={handleSaveAssignment}
+          assignment={currentAssignment}
+          mode={assignemntModalMode}
         />
     
       </main>

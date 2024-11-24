@@ -1,0 +1,23 @@
+<div className={styles.studyPlanGenerator}>
+            <h2 className={styles.heading}>Generate Your Study Plan</h2>
+            <p className={styles.instructions}>
+              Describe the topic or focus of your study plan, and we’ll help you create a personalized study schedule.
+            </p>
+            <textarea
+              value={theme}
+              onChange={(e) => setTheme(e.target.value)}
+              placeholder="Enter the theme of your study plan"
+              className={styles.themeTextbox}
+            />
+            <button onClick={handleSubmit} className={styles.generateButton}>
+              Generate Study Plan
+            </button>
+            
+            {studyPlan && (
+              <div className={styles.studyPlanResult}>
+                <h3>Your Generated Study Plan</h3>
+                <p>{studyPlan}</p>
+              </div>
+            )}
+        </div>
+        

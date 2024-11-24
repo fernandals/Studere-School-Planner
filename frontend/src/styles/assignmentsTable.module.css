@@ -1,0 +1,62 @@
+.tableSection {
+  margin-top: 24px;
+}
+
+.table {
+  width: 100%; /* Table takes up 100% of the parent container */
+  table-layout: fixed; /* Table layout is fixed, widths of columns determined by header */
+  border-collapse: collapse; /* Ensures the table borders collapse into one */
+  font-size: 0.9rem; /* Slightly smaller font size for compactness */
+}
+
+.th, .td {
+  padding: 8px 12px; /* Padding for comfortable spacing inside cells */
+  text-align: left; /* Align text to the left */
+  color: #333; /* Darker text for better readability */
+  white-space: normal; /* Allow text to wrap inside cells */
+}
+
+.th {
+  background-color: #f4f4f4; /* Light gray background for header */
+  font-weight: bold; /* Emphasize header text */
+  border-bottom: 2px solid #ddd; /* Subtle border below header */
+  word-wrap: break-word; /* Ensure header text wraps if needed */
+}
+
+.td {
+  border-bottom: 1px solid #f0f0f0; /* Light border between rows */
+  word-wrap: break-word; /* Allow wrapping inside data cells */
+}
+
+.tr:hover {
+  background-color: #f9f9f9; /* Subtle hover effect on rows */
+  cursor: pointer;
+}
+
+.noData .td {
+  text-align: center;
+  color: #999; /* Lighter color for no data rows */
+  background-color: #fafafa; /* Light background to indicate no data */
+}
+
+.table .th, .table .td {
+  border-top: 1px solid #ddd; /* Subtle top border for structure */
+}
+
+.ellipsisButton {
+  background: none; /* No background for the button */
+  border: none; /* Remove the border */
+  color: #666; /* Color of the icon */
+  font-size: 0.9rem; /* Adjust the size of the icon */
+  cursor: pointer; /* Pointer cursor to indicate it's clickable */
+  padding: 0; /* Remove padding */
+  text-align: center; /* Center the ellipsis */
+}
+
+.ellipsisButton:hover {
+  color: #333; /* Darken color on hover */
+}
+
+.tdButton {
+  text-align: center;
+}

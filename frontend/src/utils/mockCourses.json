@@ -1,0 +1,207 @@
+[
+  {
+    "id": 1,
+    "name": "Mathematics 101",
+    "description": "An introductory course to fundamental mathematical concepts and problem-solving techniques.",
+    "schedule": "Mon 9:00 AM - 11:00 AM",
+    "term": "Fall 2024",
+    "assignments": [
+      {
+        "title": "Assignment 1",
+        "type": "Homework",
+        "score": "90",
+        "dueAt": "2024-11-25T00:00:00Z",
+        "createdAt": "2024-11-01T00:00:00Z",
+        "description": "Complete the exercises in Chapter 5"
+      },
+      {
+        "title": "Assignment 2",
+        "type": "Project",
+        "score": "85",
+        "dueAt": "2024-11-17T00:00:00Z",
+        "createdAt": "2024-09-15T00:00:00Z",
+        "description": "Submit your final project"
+      }
+    ],
+    "studyPlans": [
+      {
+        "id": 1,
+        "name": "Focus on Chapter 2",
+        "completed": false,
+        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
+        "studySessions": ["Session 1", "Session 2"]
+      },
+      {
+        "id": 2,
+        "name": "Practice exercises for Quiz",
+        "completed": false,
+        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
+        "studySessions": ["Session 1", "Session 2"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Physics 201",
+    "description": "A comprehensive course on classical mechanics, including Newtonian physics and the laws of motion.",
+    "schedule": "Tue 10:00 AM - 12:00 PM",
+    "term": "Spring 2025",
+    "assignments": [
+      {
+        "title": "Assignment 1",
+        "type": "Homework",
+        "score": "92",
+        "dueAt": "2024-11-12T00:00:00Z",
+        "createdAt": "2024-10-01T00:00:00Z",
+        "description": "Complete the Newton's Laws problem set"
+      },
+      {
+        "title": "Lab Report",
+        "type": "Report",
+        "score": "88",
+        "dueAt": "2024-11-18T00:00:00Z",
+        "createdAt": "2024-10-05T00:00:00Z",
+        "description": "Write the lab report based on the experiment results"
+      }
+    ],
+    "studyPlans": [
+      {
+        "id": 1,
+        "name": "Review Newton’s Laws",
+        "completed": false,
+        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
+        "studySessions": ["Session 1", "Session 2"]
+      },
+      {
+        "id": 2,
+        "name": "Prepare for Lab Experiment",
+        "completed": false,
+        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
+        "studySessions": ["Session 1", "Session 2"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Computer Science 101",
+    "description": "An introduction to computer science fundamentals, programming, and algorithms.",
+    "schedule": "Mon 1:00 PM - 3:00 PM",
+    "term": "Summer 2025",
+    "assignments": [
+      {
+        "title": "Project 1",
+        "type": "Project",
+        "score": "94",
+        "dueAt": "2024-11-15T00:00:00Z",
+        "createdAt": "2024-10-01T00:00:00Z",
+        "description": "Complete the first programming project"
+      },
+      {
+        "title": "Assignment 2",
+        "type": "Assignment",
+        "score": "89",
+        "dueAt": "2024-11-22T00:00:00Z",
+        "createdAt": "2024-10-10T00:00:00Z",
+        "description": "Complete the algorithm exercises"
+      }
+    ],
+    "studyPlans": [
+      {
+        "id": 1,
+        "name": "Complete Programming Assignment",
+        "completed": false,
+        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
+        "studySessions": ["Session 1", "Session 2"]
+      },
+      {
+        "id": 2,
+        "name": "Study Sorting Algorithms",
+        "completed": false,
+        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
+        "studySessions": ["Session 1", "Session 2"]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Biology 101",
+    "description": "An introductory course on biological concepts, including genetics, evolution, and ecology.",
+    "schedule": "Tue 9:00 AM - 11:00 AM",
+    "term": "Winter 2025",
+    "assignments": [
+      {
+        "title": "Quiz 1",
+        "type": "Quiz",
+        "score": "78",
+        "dueAt": "2024-11-13T00:00:00Z",
+        "createdAt": "2024-10-01T00:00:00Z",
+        "description": "Prepare for Quiz 1"
+      },
+      {
+        "title": "Group Project",
+        "type": "Project",
+        "score": "85",
+        "dueAt": "2024-11-20T00:00:00Z",
+        "createdAt": "2024-10-10T00:00:00Z",
+        "description": "Collaborate on the group project"
+      }
+    ],
+    "studyPlans": [
+      {
+        "id": 1,
+        "name": "Study for Quiz 1",
+        "completed": false,
+        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
+        "studySessions": ["Session 1", "Session 2"]
+      },
+      {
+        "id": 2,
+        "name": "Research for Group Project",
+        "completed": false,
+        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
+        "studySessions": ["Session 1", "Session 2"]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "History 102",
+    "description": "A survey course covering key historical events from the Middle Ages to the Modern era.",
+    "schedule": "Mon 3:00 PM - 5:00 PM",
+    "term": "Fall 2024",
+    "assignments": [
+      {
+        "title": "Essay 1",
+        "type": "Essay",
+        "score": "90",
+        "dueAt": "2024-11-16T00:00:00Z",
+        "createdAt": "2024-10-01T00:00:00Z",
+        "description": "Write a detailed essay on medieval history"
+      },
+      {
+        "title": "Presentation",
+        "type": "Presentation",
+        "score": "93",
+        "dueAt": "2024-11-23T00:00:00Z",
+        "createdAt": "2024-10-15T00:00:00Z",
+        "description": "Prepare and deliver the final presentation"
+      }
+    ],
+    "studyPlans": [
+      {
+        "id": 1,
+        "name": "Read Chapter 5",
+        "completed": false,
+        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
+        "studySessions": ["Session 1", "Session 2"]
+      },
+      {
+        "id": 2,
+        "name": "Prepare for Presentation",
+        "completed": false,
+        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
+        "studySessions": ["Session 1", "Session 2"]
+      }
+    ]
+  }
+]

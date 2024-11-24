@@ -2,7 +2,7 @@ import CourseCard from './courseCard';
 
 import styles from '@/styles/courseList.module.css';
 
-export default function CourseList({ courses, onEdit, onDelete }) {
+export default function CourseList({ courses, onEdit, onDelete, onCreateAss, onEditAss, onViewAss }) {
     return (
         <div className={styles.gridContainer}>
             {courses.map((course) => (
@@ -10,7 +10,11 @@ export default function CourseList({ courses, onEdit, onDelete }) {
                     key={course.id}
                     course={course}
                     onEdit={onEdit}
-                    onDelete={onDelete} />
+                    onDelete={onDelete}
+                    onCreateAss={onCreateAss}
+                    onEditAss={onEditAss}
+                    onViewAss={onViewAss}
+                />
             ))}
         </div>
     );

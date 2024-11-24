@@ -1,11 +1,24 @@
 import { useState } from 'react';
 import { FaPen, FaTrashAlt } from 'react-icons/fa';
+import { IoMdAddCircleOutline } from "react-icons/io";
+
+import AssignmentsTable from '@/components/assignmentsTable';
 
 import styles from '@/styles/courseCard.module.css';
 
-export default function CourseCard({ course, onEdit, onDelete }) {
+export default function CourseCard({ course, onEdit, onDelete, onCreateAss, onEditAss, onViewAss }) {
     const { id, name, description, schedule, term, assignments, studyPlans } = course;
     const [isExpanded, setIsExpanded] = useState(false);
+    const [filter, setFilter] = useState('all');  // 'all', 'upcoming', or 'past'
+
+    const getFilterCondition = () => {
+        if (filter === 'upcoming') {
+          return (assignment) => new Date(assignment.dueAt) > new Date();
+        } else if (filter === 'past') {
+          return (assignment) => new Date(assignment.dueAt) < new Date();
+        }
+        return () => true;  // 'all' - no filter
+    };
 
     const toggleExpand = () => setIsExpanded(!isExpanded);
 
@@ -28,8 +41,10 @@ export default function CourseCard({ course, onEdit, onDelete }) {
 
                 <div className={styles.headerContent}>
                     <h2 className={styles.courseName}>{name}</h2>
-                    <p className={styles.courseSchedule}>{schedule}</p>
-                    <p className={styles.courseTerm}>{term}</p>
+                    <div style={{display: 'flex'}}>
+                        <p className={styles.courseSchedule}>{schedule}</p>
+                        <p className={styles.courseTerm}>{term}</p>
+                    </div>
                     <p className={styles.courseDescription}>{description}</p>
                 </div>
             </div>
@@ -39,16 +54,28 @@ export default function CourseCard({ course, onEdit, onDelete }) {
                 <div className={styles.mainSection}>
                     {/* Assignments Section */}
                     <div className={styles.assignments}>
-                        <h3>Assignments</h3>
-                        <ul>
-                            {assignments.length > 0 ? (
-                                assignments.map((assignment, index) => (
-                                    <li key={index}>{assignment}</li>
-                                ))
-                            ) : (
-                                <p>No assignments yet.</p>
-                            )}
-                        </ul>
+                        
+                        <div style={{display: 'flex', alignItems: 'center'}}>
+                            <h3 className={styles.subtitle}>Assignments</h3>
+                            <button onClick={onCreateAss} className={styles.addAssignmentButton}>
+                                <IoMdAddCircleOutline />
+                            </button>
+                        </div>                     
+
+                        {/* Filter Buttons */}
+                        <div className={styles.filterButtons}>
+                            <button className={styles.button} onClick={() => setFilter('all')}>All</button>
+                            <button className={styles.button} onClick={() => setFilter('upcoming')}>Upcoming</button>
+                            <button className={styles.button} onClick={() => setFilter('past')}>Past</button>
+                        </div>
+
+                        <AssignmentsTable
+                            assignments={assignments}
+                            title={`${filter.charAt(0).toUpperCase() + filter.slice(1)} Assignments`}
+                            filterCondition={getFilterCondition()}
+                            onEdit={onEditAss}
+                            onView={onViewAss}
+                        />
                     </div>
 
                     {/* Study Plans Section */}
@@ -56,11 +83,26 @@ export default function CourseCard({ course, onEdit, onDelete }) {
                         <h3>Study Plans</h3>
                         <ul>
                             {studyPlans.length > 0 ? (
-                                studyPlans.map((plan, index) => (
-                                    <li key={index}>{plan}</li>
-                                ))
+                            studyPlans.map((plan, index) => (
+                                <li key={index}>
+                                <h4>{plan.name}</h4>
+                                <p>Status: {plan.completed ? 'Completed' : 'Not Completed'}</p>
+                                <p>Topics:</p>
+                                <ul>
+                                    {plan.studyTopics.map((topic, topicIndex) => (
+                                    <li key={topicIndex}>{topic}</li>
+                                    ))}
+                                </ul>
+                                <p>Sessions:</p>
+                                <ul>
+                                    {plan.studySessions.map((session, sessionIndex) => (
+                                    <li key={sessionIndex}>{session}</li>
+                                    ))}
+                                </ul>
+                                </li>
+                            ))
                             ) : (
-                                <p>No study plans yet.</p>
+                            <p>No study plans yet.</p>
                             )}
                         </ul>
                     </div>
