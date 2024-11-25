@@ -1,0 +1,171 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.entry {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.entryDuration {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 20px;
+}
+
+.label {
+  width: 100px; /* Retains fixed width for alignment */
+  font-size: 15px; /* Slightly larger for readability */
+  font-weight: 600; /* Bold or semi-bold for emphasis */
+  color: #555; /* Softer dark color for better contrast */
+  margin-bottom: 8px; /* Slightly larger spacing from input fields */
+  display: block; /* Ensures labels stack above inputs */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.label:hover {
+  color: #007bff; /* Subtle color change on hover for interactivity */
+}
+
+.inputBox, 
+.textareaBox {
+  flex: 1;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dcdfe6; /* Softer border color */
+  border-radius: 6px; /* Slightly rounder corners */
+  background-color: #f9f9f9; /* Light background */
+  font-size: 16px; /* Increase font size for better readability */
+  color: #333; /* Text color */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover/focus */
+}
+
+.inputBox:focus, 
+.textareaBox:focus {
+  border-color: #007bff; /* Blue border on focus */
+  background-color: #fff; /* White background on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle blue glow */
+  outline: none; /* Remove default outline */
+}
+
+.inputBox:hover, 
+.textareaBox:hover {
+  border-color: #007bff; /* Blue border on hover */
+  background-color: #fdfdfd; /* Slightly brighter background */
+}
+
+.textareaBox {
+  height: 30px; /* Increased height for textarea */
+  resize: vertical; /* Allow resizing vertically only */
+}
+
+.topicBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px; /* Increased space between items for better visual balance */
+  margin-bottom: 8px; /* Added a bit more spacing from the bottom */
+}
+
+.topicItem {
+  display: flex;
+  align-items: center;
+  font-size: 14px; /* Increased font size for better readability */
+  font-weight: 500; /* Slightly bolder text for emphasis */
+  color: #333; /* Darker text color for better contrast */
+  padding: 5px 10px; /* Added padding around each item for better spacing */
+  border-radius: 8px; /* Rounded corners for a more modern look */
+  transition: background-color 0.2s ease; /* Smooth background transition on hover */
+}
+
+.topicItem:hover {
+  background-color: #f0f0f0; /* Light background color on hover for interactivity */
+}
+
+.checkbox {
+  margin-right: 10px; /* Increased space between checkbox and label for better clarity */
+  cursor: pointer; /* Indicate that the checkbox is clickable */
+}
+
+.checkbox input {
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Smooth transition for checkbox on hover/focus */
+}
+
+.checkbox input:hover {
+  transform: scale(1.1); /* Slightly enlarge checkbox on hover for better focus */
+}
+
+.durationDisplay {
+  font-size: 16px;
+  margin: 15px 0;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.closeButton {
+  position: absolute; /* Place it relative to the modal container */
+  top: 10px; /* Space from the top edge */
+  right: 10px; /* Space from the right edge */
+  background: none; /* Remove default button background */
+  border: none; /* Remove border */
+  color: #555; /* Neutral color for the 'x' */
+  font-size: 25px; /* Slightly larger font size for visibility */
+  font-weight: bold; /* Make it stand out */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.closeButton:hover {
+  color: #007bff; /* Change to blue on hover for interactivity */
+}
+
+
+

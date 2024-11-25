@@ -1,0 +1,331 @@
+[
+  {
+    "id": 1,
+    "name": "Mathematics 101",
+    "description": "An introductory course to fundamental mathematical concepts and problem-solving techniques.",
+    "schedule": "Mon 9:00 AM - 11:00 AM",
+    "term": "Fall 2024",
+    "assignments": [
+      {
+        "title": "Assignment 1",
+        "type": "Homework",
+        "score": "90",
+        "dueAt": "2024-11-25T00:00:00Z",
+        "createdAt": "2024-11-01T00:00:00Z",
+        "description": "Complete the exercises in Chapter 5"
+      },
+      {
+        "title": "Assignment 2",
+        "type": "Project",
+        "score": "85",
+        "dueAt": "2024-11-17T00:00:00Z",
+        "createdAt": "2024-09-15T00:00:00Z",
+        "description": "Submit your final project"
+      }
+    ],
+    "studyPlans": [
+      {
+        "id": 1,
+        "name": "Focus on Chapter 2",
+        "completed": false,
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": false,
+            "notes": "Review the basic principles of algebra."
+          },
+          {
+            "name": "Topic 2",
+            "completed": false,
+            "notes": "Understand the concept of functions and their graphs."
+          },
+          {
+            "name": "Topic 3",
+            "completed": false,
+            "notes": "Solve practice problems involving functions."
+          }
+        ],
+        "studySessions": [
+          {
+            "title": "Session 1",
+            "description": "Focused on algebra basics.",
+            "notes": "Covered basic principles thoroughly.",
+            "startedAt": "2024-11-20T09:00:00Z",
+            "endedAt": "2024-11-20T10:00:00Z",
+            "pauseTime": 5,
+            "topicsStudied": ["Topic 1"]
+          },
+          {
+            "title": "Session 2",
+            "description": "Worked on function graphs.",
+            "notes": "Struggled with graphing complex functions.",
+            "startedAt": "2024-11-21T09:30:00Z",
+            "endedAt": "2024-11-21T10:30:00Z",
+            "pauseTime": 10,
+            "topicsStudied": ["Topic 2"]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Practice exercises for Quiz",
+        "completed": false,
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": false,
+            "notes": "Focus on solving quadratic equations."
+          },
+          {
+            "name": "Topic 2",
+            "completed": false,
+            "notes": "Review calculus basics."
+          },
+          {
+            "name": "Topic 3",
+            "completed": false,
+            "notes": "Practice problem-solving under time constraints."
+          }
+        ],
+        "studySessions": [
+          {
+            "title": "Session 1",
+            "description": "Focused on algebra basics.",
+            "notes": "Covered basic principles thoroughly.",
+            "startedAt": "2024-11-20T09:00:00Z",
+            "endedAt": "2024-11-20T10:00:00Z",
+            "pauseTime": 5,
+            "topicsStudied": ["Topic 1"]
+          },
+          {
+            "title": "Session 2",
+            "description": "Worked on function graphs.",
+            "notes": "Struggled with graphing complex functions.",
+            "startedAt": "2024-11-21T09:30:00Z",
+            "endedAt": "2024-11-21T10:30:00Z",
+            "pauseTime": 10,
+            "topicsStudied": ["Topic 2"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Physics 201",
+    "description": "A comprehensive course on classical mechanics, including Newtonian physics and the laws of motion.",
+    "schedule": "Tue 10:00 AM - 12:00 PM",
+    "term": "Spring 2025",
+    "assignments": [],
+    "studyPlans": [
+      {
+        "id": 1,
+        "name": "Review Newton’s Laws",
+        "completed": false,
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": false,
+            "notes": "Study the three laws of motion."
+          },
+          {
+            "name": "Topic 2",
+            "completed": false,
+            "notes": "Apply the laws to different physical scenarios."
+          },
+          {
+            "name": "Topic 3",
+            "completed": false,
+            "notes": "Work on examples of forces and motion calculations."
+          }
+        ],
+        "studySessions": [
+          {
+            "title": "Session 1",
+            "description": "Studied Newton's First and Second Laws.",
+            "notes": "Did example problems for better understanding.",
+            "startedAt": "2024-11-23T14:00:00Z",
+            "endedAt": "2024-11-23T15:30:00Z",
+            "pauseTime": 10,
+            "topicsStudied": ["Topic 1"]
+          },
+          {
+            "title": "Session 2",
+            "description": "Applied Newton’s Laws to motion scenarios.",
+            "notes": "Solved problems involving inclined planes.",
+            "startedAt": "2024-11-24T10:00:00Z",
+            "endedAt": "2024-11-24T11:30:00Z",
+            "pauseTime": 15,
+            "topicsStudied": ["Topic 2"]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Prepare for Lab Experiment",
+        "completed": false,
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": false,
+            "notes": "Review the lab manual and experiment setup."
+          },
+          {
+            "name": "Topic 2",
+            "completed": false,
+            "notes": "Prepare the necessary materials for the lab."
+          },
+          {
+            "name": "Topic 3",
+            "completed": false,
+            "notes": "Understand the theory behind the experiment."
+          }
+        ],
+        "studySessions": []
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Computer Science 101",
+    "description": "An introduction to computer science fundamentals, programming, and algorithms.",
+    "schedule": "Mon 1:00 PM - 3:00 PM",
+    "term": "Summer 2025",
+    "assignments": [
+      {
+        "title": "Project 1",
+        "type": "Project",
+        "score": "94",
+        "dueAt": "2024-11-15T00:00:00Z",
+        "createdAt": "2024-10-01T00:00:00Z",
+        "description": "Complete the first programming project"
+      },
+      {
+        "title": "Assignment 2",
+        "type": "Assignment",
+        "score": "89",
+        "dueAt": "2024-11-22T00:00:00Z",
+        "createdAt": "2024-10-10T00:00:00Z",
+        "description": "Complete the algorithm exercises"
+      }
+    ],
+    "studyPlans": []
+  },
+  {
+    "id": 4,
+    "name": "Biology 101",
+    "description": "An introductory course on biological concepts, including genetics, evolution, and ecology.",
+    "schedule": "Tue 9:00 AM - 11:00 AM",
+    "term": "Winter 2025",
+    "assignments": [
+      {
+        "title": "Quiz 1",
+        "type": "Quiz",
+        "score": "78",
+        "dueAt": "2024-11-13T00:00:00Z",
+        "createdAt": "2024-10-01T00:00:00Z",
+        "description": "Prepare for Quiz 1"
+      },
+      {
+        "title": "Group Project",
+        "type": "Project",
+        "score": "85",
+        "dueAt": "2024-11-20T00:00:00Z",
+        "createdAt": "2024-10-10T00:00:00Z",
+        "description": "Collaborate on the group project"
+      }
+    ],
+    "studyPlans": [
+      {
+        "id": 1,
+        "name": "Study for Quiz 1",
+        "completed": false,
+        "studyTopics": [],
+        "studySessions": [
+          {
+            "title": "Session 1",
+            "description": "Studied genetics concepts.",
+            "notes": "Made flashcards for review.",
+            "startedAt": "2024-11-15T10:00:00Z",
+            "endedAt": "2024-11-15T11:30:00Z",
+            "pauseTime": 10,
+            "topicsStudied": ["Topic 1", "Topic 2"]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Research for Group Project",
+        "completed": true,
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": true,
+            "notes": "Completed research on genetics for the project."
+          },
+          {
+            "name": "Topic 2",
+            "completed": true,
+            "notes": "Researched ecology and the impact of climate change."
+          },
+          {
+            "name": "Topic 3",
+            "completed": true,
+            "notes": "Finished writing the introduction section."
+          }
+        ],
+        "studySessions": []
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "History 102",
+    "description": "A survey course covering key historical events from the Middle Ages to the Modern era.",
+    "schedule": "Mon 3:00 PM - 5:00 PM",
+    "term": "Fall 2024",
+    "assignments": [
+      {
+        "title": "Essay 1",
+        "type": "Essay",
+        "score": "90",
+        "dueAt": "2024-11-16T00:00:00Z",
+        "createdAt": "2024-10-01T00:00:00Z",
+        "description": "Write a detailed essay on medieval history"
+      },
+      {
+        "title": "Presentation",
+        "type": "Presentation",
+        "score": "93",
+        "dueAt": "2024-11-23T00:00:00Z",
+        "createdAt": "2024-10-15T00:00:00Z",
+        "description": "Prepare and deliver the final presentation"
+      }
+    ],
+    "studyPlans": [
+      {
+        "id": 1,
+        "name": "Read Chapter 5",
+        "completed": false,
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": false,
+            "notes": "Focus on feudalism in medieval Europe."
+          },
+          {
+            "name": "Topic 2",
+            "completed": false,
+            "notes": "Study the role of the Catholic Church."
+          },
+          {
+            "name": "Topic 3",
+            "completed": false,
+            "notes": "Understand the political structure of feudal systems."
+          }
+        ],
+        "studySessions": []
+      }
+    ]
+  }
+]

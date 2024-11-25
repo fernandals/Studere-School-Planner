@@ -1,0 +1,23 @@
+.gridContainer {
+  display: flex; /* Flexbox for vertical stacking */
+  flex-direction: column; /* Stacks children vertically */
+  gap: 1.5em; /* Space between cards */
+  padding: 1em; /* Padding around the container */
+  width: 100%; /* Ensures full width */
+  box-sizing: border-box; /* Include padding in total width calculation */
+}
+
+.gridContainer > * {
+  width: 100%; /* Ensures child elements (cards) are full-width */
+}
+
+.noPlansMessage {
+  text-align: center; /* Center the text */
+  color: #555; /* Neutral gray color */
+  font-size: 1.1rem; /* Slightly larger font */
+  margin-top: 20px; /* Space above the message */
+  padding: 10px; /* Optional padding for better readability */
+  background-color: #f9f9f9; /* Subtle background to make it noticeable */
+  border: 1px solid #ddd; /* Light border for emphasis */
+  border-radius: 4px; /* Rounded corners */
+}

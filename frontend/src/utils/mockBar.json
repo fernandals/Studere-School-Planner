@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Monday",
+    "time": 2
+  },
+  {
+    "name": "Tuesday",
+    "time": 3 
+  },
+  {
+    "name": "Wednesday", 
+    "time": 1 
+  },
+  { 
+    "name": "Thursday",
+    "time": 4 
+  },
+  { 
+    "name": "Friday", 
+    "time": 5 
+  },
+  { 
+    "name": "Saturday", 
+    "time": 2 
+  },
+  { 
+    "name": "Sunday", 
+    "time": 0 
+  }
+]

@@ -1,0 +1,67 @@
+.courseSelection {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  gap: 12px; /* Add spacing between the subtitle and the select box */
+  margin: 16px 0; /* Spacing around the section */
+}
+
+.subtitle {
+  font-size: 1rem; /* Adjust subtitle size */
+  font-weight: bold; /* Emphasize subtitle */
+  color: #333; /* Neutral color */
+  margin: 0; /* Reset default margins */
+}
+
+.courseSelect {
+  flex: 1; /* Make the dropdown flexible and responsive */
+  padding: 8px 12px; /* Add padding for better click targets */
+  font-size: 0.9rem; /* Adjust text size */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #fff; /* Ensure a neutral background */
+  color: #333; /* Neutral text color */
+  cursor: pointer; /* Indicate clickable dropdown */
+}
+
+.createButton, .generateButton {
+  padding: 10px 10px; /* Comfortable button size */
+  font-size: 0.9rem; /* Readable text size */
+  border: none; /* Removes default border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+/* Create Button Style */
+.createButton {
+  background-color: #4CAF50; /* Green background */
+  color: #fff; /* White text */
+}
+
+.createButton:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Generate Button Style */
+.generateButton {
+  background-color: #007BFF; /* Blue background */
+  color: #fff; /* White text */
+}
+
+.generateButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.disabledButton {
+  background-color: #ccc; /* Gray background for disabled state */
+  color: #666; /* Lighter text color */
+  cursor: not-allowed; /* Show 'not allowed' cursor */
+  transform: none; /* Remove hover effects */
+}
+
+.disabledButton:hover {
+  background-color: #333;
+  color: #ddd;
+}
