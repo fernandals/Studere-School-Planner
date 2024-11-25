@@ -1,0 +1,5 @@
+[
+  { "course": "Math", "time": 10 },
+  { "course": "Science", "time": 8 },
+  { "course": "History", "time": 7 }
+]
