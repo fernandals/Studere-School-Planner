@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { API_URL } from '@/config';
+
+import axios from 'axios';
+
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from '@/styles/login.module.css';
 import appIcon from '../../public/images/icon.png'; 
-import axios from 'axios';
-import { useRouter } from 'next/router';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -15,23 +18,18 @@ const Login = () => {
 
   const router = useRouter();
 
-  const handleLogin = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+  const handleLogin = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault(); 
 
     try {
-      // Make login request
-      const response = await axios.post('http://localhost:8000/users/login/', { "email": email, "password": password });
+      // login request
+      const response = await axios.post(`${API_URL}/users/login/`, { "email": email, "password": password });
       
-      // Get the Bearer token from the response
       const token = response.data.access_token;
 
-      // Store the token (you could store it in localStorage or cookies)
       localStorage.setItem('authToken', token);
-      router.push('/dashboard');
 
-      // Redirect the user after successful login (optional)
-      // You can use Next.js' useRouter for navigation
-      // router.push('/dashboard');
+      router.push('/dashboard');
     } catch (err) {
       // Handle errors (e.g., invalid credentials)
       setError('Invalid email or password');

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { ClipLoader } from 'react-spinners';
 
 import { BarChart, Bar, XAxis, YAxis, Tooltip, PieChart, Pie, LineChart, Line, Cell, ResponsiveContainer } from 'recharts';
 
@@ -16,9 +18,35 @@ import barData from '@/utils/mockBar.json';
 import pieData from '@/utils/mockPie.json';
 
 const Dashboard = () => {
+  const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   const [studyTime, setStudyTime] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      router.push('/login');
+    } else {
+      setIsAuthenticated(true);
+    }
+  }, [router]);
+
+  if (!isAuthenticated) {
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh'
+      }}>
+        <ClipLoader color="#3498db" size={50} />
+      </div>
+    );
+  }
+
+  /*
   useEffect(() => {
     const fetchMockStudyTime = async () => {
       setTimeout(() => setStudyTime(30), 1000); // Simulate a delay
@@ -26,7 +54,7 @@ const Dashboard = () => {
     };
   
     fetchMockStudyTime();
-  }, []);
+  }, []);*/
 
   return (
     <div style={{ display: 'flex' }}>

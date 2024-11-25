@@ -4,7 +4,7 @@ import Sidebar from '@/components/sidebar';
 import Header from '@/components/header';
 import CourseList from '@/components/courseList';
 import CourseModal from '@/components/courseModal';
-import AssignmentModal from '@/components/assignmnetModal'
+import AssignmentModal from '@/components/assignmnetModal';
 
 import styles from '@/styles/courses.module.css';
 
@@ -14,6 +14,7 @@ import mockTerms from "@/utils/mockTerms.json";
 const Courses = () => {
   const [isCourseModalOpen, setIsCourseModalOpen] = useState(false);
   const [isAssignmentModalOpen, setIsAssignmentModalOpen] = useState(false);
+
   const [assignemntModalMode, setAssignmentModalMode] = useState('create'); // 'create', 'edit', or 'view'
 
   const [courses, setCourses] = useState([]);
@@ -22,6 +23,7 @@ const Courses = () => {
 
   const closeCourseModal = () => setIsCourseModalOpen(false);
   const closeAssignmentModal = () => setIsAssignmentModalOpen(false);
+
 
   {/* Course Utils */}
   const handleCreateCourse = () => {

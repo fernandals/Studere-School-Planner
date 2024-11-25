@@ -28,6 +28,10 @@ const Sidebar = () => {
             <button className={styles.button}>Dashboard</button>
           </Link>
 
+          <Link href="/terms">
+            <button className={styles.button}>Terms</button>
+          </Link>
+
           <Link href="/courses">
             <button className={styles.button}>Courses</button>
           </Link>
@@ -43,12 +47,6 @@ const Sidebar = () => {
           <Link href="/calendar">
             <button className={styles.button}>Calendar</button>
           </Link>
-
-          {/*
-          <Link href="/settings">
-            <button className={styles.button}>Settings</button>
-          </Link>
-          */}
         </div>
 
         <div className={styles.userInfo}>

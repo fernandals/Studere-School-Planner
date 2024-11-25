@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { API_URL } from '@/config';
+
+import axios from 'axios';
 
 import Head from 'next/head';
 import Image from 'next/image';
@@ -11,12 +15,14 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
     const [errors, setErrors] = useState({});
+    const [emailError, setEmailError] = useState('');
 
-    {/* 
+    const router = useRouter();
+ 
     const validateForm = () => {
         const newErrors = {};
+
         if (!name) newErrors.name = 'Name is required.';
         if (!email) {
             newErrors.email = 'Email is required.';
@@ -30,18 +36,33 @@ const Register = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setEmailError('');
+
         if (validateForm()) {
-            console.log('Form submitted:', { name, email, password });
-            // Here you would typically send the data to your backend
-            // For example: axios.post('/api/register', { name, email, password })
-        } else {
-            setErrorMessage('Please fix the errors above.');
+          const requestBody = {
+            "email": email,
+            "password": password,
+            "full_name": name
+          };
+
+          try {
+            const response = await axios.post(`${API_URL}/users/register/`, requestBody);
+            console.log('Registration successful:', response);
+
+            router.push('/login');
+          } catch (error) {
+              console.log(error)
+              if (error.response && error.response.status === 400) {
+                setEmailError(error.response.data.message || 'Email already exists.');
+              } else {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+              }
+          }
         }
     };
-
-    */}
 
     return (
       <div className={styles.container}>
@@ -58,7 +79,7 @@ const Register = () => {
         <div className={styles.formBlock}>
           <h2 className={styles.title}>Create an account!</h2>
               
-          <form /*onSubmit={handleSubmit}*/ className={styles.form} >
+          <form onSubmit={handleSubmit} className={styles.form} >
             <input 
                 type="text"
                 value={name}
@@ -66,9 +87,8 @@ const Register = () => {
                 onChange={(e) => setName(e.target.value)}
                 className={styles.input}
             />
-            {/*{errors.name && <p style={{ color: 'red' }}>{errors.name}</p>} 
-            */}
-
+            {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>} 
+            
             <input
               type="email"
               value={email}
@@ -76,9 +96,8 @@ const Register = () => {
               placeholder='Enter your email'
               className={styles.input}
             />
-            {/*
             {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
-            */}
+            {emailError && <div style={{ color: 'red' }}>{emailError}</div>}
 
             <input
               type="password"
@@ -87,9 +106,7 @@ const Register = () => {
               placeholder='Enter your password'
               className={styles.input}
             />
-            {/*
             {errors.password && <p style={{ color: 'red' }}>{errors.password}</p>}
-            */}
             
             <input
               type="password"
@@ -98,15 +115,12 @@ const Register = () => {
               placeholder='Confirm your password'
               className={styles.input}
             />
-            {/*
             {errors.confirmPassword && <p style={{ color: 'red' }}>{errors.confirmPassword}</p>}
-            */}
             
             <button type="submit" className={styles.registerButton}>Register</button>
 
             <a href="/login" className={styles.haveAccount}>Already have an account?</a>
                 
-            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
           </form>
 
         </div>
