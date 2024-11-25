@@ -6,6 +6,9 @@ import Sidebar from '@/components/sidebar';
 import Header from '@/components/header';
 import StudyTimeDoughnutChat from '@/components/studyTimeDoughnutChart';
 import StreaksCard from '@/components/streaksCard';
+import TimeDistributionChart from '@/components/timeDistributionChart';
+import CourseComparisonChart from '@/components/courseComparisonChart';
+import StudySessionAmountChart from '@/components/studySessionAmountChart';
 
 import styles from '@/styles/dashboard.module.css';
 
@@ -49,18 +52,9 @@ const Dashboard = () => {
           <div className={styles.dashboardGrid}>
             <StudyTimeDoughnutChat/>
             <StreaksCard/>
-
-            <div className={styles.card}>
-              <h2>Time Distribution</h2>
-              <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={barData}>
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="time" fill="#8884d8" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
+            <TimeDistributionChart/>
+            <CourseComparisonChart/>
+            <StudySessionAmountChart/>
 
             <div className={styles.card}>
               <h2>Topic Completion</h2>
