@@ -9,12 +9,12 @@ import appLogo from '../../public/images/icon.png';
 const Sidebar = () => {
   const [email, setEmail] = useState(null);
 
-  useEffect(() => {
-    // Replace with actual API endpoint!
-    fetch("/api/user")
-      .then((res) => res.json())
-      .then((data) => setEmail(data.email));
-  }, []);
+  // useEffect(() => {
+  //   // Replace with actual API endpoint!
+  //   fetch("/api/user")
+  //     .then((res) => res.json())
+  //     .then((data) => setEmail(data.email));
+  // }, []);
 
   return (
       <div className={styles.sidebar}>
