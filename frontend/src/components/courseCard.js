@@ -80,29 +80,22 @@ export default function CourseCard({ course, onEdit, onDelete, onCreateAss, onEd
 
                     {/* Study Plans Section */}
                     <div className={styles.studyPlans}>
-                        <h3>Study Plans</h3>
+                        <h3 className={styles.subtitle}>Study Plans</h3>
                         <ul>
                             {studyPlans.length > 0 ? (
                             studyPlans.map((plan, index) => (
                                 <li key={index}>
-                                <h4>{plan.name}</h4>
-                                <p>Status: {plan.completed ? 'Completed' : 'Not Completed'}</p>
-                                <p>Topics:</p>
-                                <ul>
-                                    {plan.studyTopics.map((topic, topicIndex) => (
-                                    <li key={topicIndex}>{topic}</li>
-                                    ))}
-                                </ul>
-                                <p>Sessions:</p>
-                                <ul>
-                                    {plan.studySessions.map((session, sessionIndex) => (
-                                    <li key={sessionIndex}>{session}</li>
-                                    ))}
-                                </ul>
+                                    <div className={styles.planSnippet}>
+                                        <h4 className={styles.planName}>{plan.name}</h4>
+                                        <p className={`${styles["planStatus"]} ${plan.completed ? styles.completed : styles["notCompleted"]}`}>
+                                            Status: {plan.completed ? 'Completed' : 'Not Completed'}
+                                        </p>
+
+                                    </div>
                                 </li>
                             ))
                             ) : (
-                            <p>No study plans yet.</p>
+                            <p className={styles.noPlans}>No study plans yet.</p>
                             )}
                         </ul>
                     </div>

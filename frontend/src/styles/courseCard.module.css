@@ -100,7 +100,8 @@
 }
 
 .courseSchedule,
-.courseTerm {
+.courseTerm,
+.noPlans {
   font-size: 0.9rem;
   color: #666;
   margin-right: 10px;
@@ -193,4 +194,38 @@
 
 .addAssignmentButton:active {
   transform: scale(0.95); /* Slightly scale down when clicked */
+}
+
+.planSnippet {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 4px 9px;
+  margin: 2px 0;
+  background-color: #fdfdfd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.planName {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.planStatus {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.completed {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.notCompleted {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
 }

@@ -95,7 +95,6 @@ const Courses = () => {
     }
   };
   
-
   return (
     <div style={{ display: 'flex' }}>
       <Sidebar />

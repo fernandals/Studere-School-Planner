@@ -28,15 +28,85 @@
         "id": 1,
         "name": "Focus on Chapter 2",
         "completed": false,
-        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
-        "studySessions": ["Session 1", "Session 2"]
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": false,
+            "notes": "Review the basic principles of algebra."
+          },
+          {
+            "name": "Topic 2",
+            "completed": false,
+            "notes": "Understand the concept of functions and their graphs."
+          },
+          {
+            "name": "Topic 3",
+            "completed": false,
+            "notes": "Solve practice problems involving functions."
+          }
+        ],
+        "studySessions": [
+          {
+            "title": "Session 1",
+            "description": "Focused on algebra basics.",
+            "notes": "Covered basic principles thoroughly.",
+            "startedAt": "2024-11-20T09:00:00Z",
+            "endedAt": "2024-11-20T10:00:00Z",
+            "pauseTime": 5,
+            "topicsStudied": ["Topic 1"]
+          },
+          {
+            "title": "Session 2",
+            "description": "Worked on function graphs.",
+            "notes": "Struggled with graphing complex functions.",
+            "startedAt": "2024-11-21T09:30:00Z",
+            "endedAt": "2024-11-21T10:30:00Z",
+            "pauseTime": 10,
+            "topicsStudied": ["Topic 2"]
+          }
+        ]
       },
       {
         "id": 2,
         "name": "Practice exercises for Quiz",
         "completed": false,
-        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
-        "studySessions": ["Session 1", "Session 2"]
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": false,
+            "notes": "Focus on solving quadratic equations."
+          },
+          {
+            "name": "Topic 2",
+            "completed": false,
+            "notes": "Review calculus basics."
+          },
+          {
+            "name": "Topic 3",
+            "completed": false,
+            "notes": "Practice problem-solving under time constraints."
+          }
+        ],
+        "studySessions": [
+          {
+            "title": "Session 1",
+            "description": "Focused on algebra basics.",
+            "notes": "Covered basic principles thoroughly.",
+            "startedAt": "2024-11-20T09:00:00Z",
+            "endedAt": "2024-11-20T10:00:00Z",
+            "pauseTime": 5,
+            "topicsStudied": ["Topic 1"]
+          },
+          {
+            "title": "Session 2",
+            "description": "Worked on function graphs.",
+            "notes": "Struggled with graphing complex functions.",
+            "startedAt": "2024-11-21T09:30:00Z",
+            "endedAt": "2024-11-21T10:30:00Z",
+            "pauseTime": 10,
+            "topicsStudied": ["Topic 2"]
+          }
+        ]
       }
     ]
   },
@@ -46,38 +116,72 @@
     "description": "A comprehensive course on classical mechanics, including Newtonian physics and the laws of motion.",
     "schedule": "Tue 10:00 AM - 12:00 PM",
     "term": "Spring 2025",
-    "assignments": [
-      {
-        "title": "Assignment 1",
-        "type": "Homework",
-        "score": "92",
-        "dueAt": "2024-11-12T00:00:00Z",
-        "createdAt": "2024-10-01T00:00:00Z",
-        "description": "Complete the Newton's Laws problem set"
-      },
-      {
-        "title": "Lab Report",
-        "type": "Report",
-        "score": "88",
-        "dueAt": "2024-11-18T00:00:00Z",
-        "createdAt": "2024-10-05T00:00:00Z",
-        "description": "Write the lab report based on the experiment results"
-      }
-    ],
+    "assignments": [],
     "studyPlans": [
       {
         "id": 1,
         "name": "Review Newton’s Laws",
         "completed": false,
-        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
-        "studySessions": ["Session 1", "Session 2"]
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": false,
+            "notes": "Study the three laws of motion."
+          },
+          {
+            "name": "Topic 2",
+            "completed": false,
+            "notes": "Apply the laws to different physical scenarios."
+          },
+          {
+            "name": "Topic 3",
+            "completed": false,
+            "notes": "Work on examples of forces and motion calculations."
+          }
+        ],
+        "studySessions": [
+          {
+            "title": "Session 1",
+            "description": "Studied Newton's First and Second Laws.",
+            "notes": "Did example problems for better understanding.",
+            "startedAt": "2024-11-23T14:00:00Z",
+            "endedAt": "2024-11-23T15:30:00Z",
+            "pauseTime": 10,
+            "topicsStudied": ["Topic 1"]
+          },
+          {
+            "title": "Session 2",
+            "description": "Applied Newton’s Laws to motion scenarios.",
+            "notes": "Solved problems involving inclined planes.",
+            "startedAt": "2024-11-24T10:00:00Z",
+            "endedAt": "2024-11-24T11:30:00Z",
+            "pauseTime": 15,
+            "topicsStudied": ["Topic 2"]
+          }
+        ]
       },
       {
         "id": 2,
         "name": "Prepare for Lab Experiment",
         "completed": false,
-        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
-        "studySessions": ["Session 1", "Session 2"]
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": false,
+            "notes": "Review the lab manual and experiment setup."
+          },
+          {
+            "name": "Topic 2",
+            "completed": false,
+            "notes": "Prepare the necessary materials for the lab."
+          },
+          {
+            "name": "Topic 3",
+            "completed": false,
+            "notes": "Understand the theory behind the experiment."
+          }
+        ],
+        "studySessions": []
       }
     ]
   },
@@ -105,22 +209,7 @@
         "description": "Complete the algorithm exercises"
       }
     ],
-    "studyPlans": [
-      {
-        "id": 1,
-        "name": "Complete Programming Assignment",
-        "completed": false,
-        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
-        "studySessions": ["Session 1", "Session 2"]
-      },
-      {
-        "id": 2,
-        "name": "Study Sorting Algorithms",
-        "completed": false,
-        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
-        "studySessions": ["Session 1", "Session 2"]
-      }
-    ]
+    "studyPlans": []
   },
   {
     "id": 4,
@@ -151,15 +240,41 @@
         "id": 1,
         "name": "Study for Quiz 1",
         "completed": false,
-        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
-        "studySessions": ["Session 1", "Session 2"]
+        "studyTopics": [],
+        "studySessions": [
+          {
+            "title": "Session 1",
+            "description": "Studied genetics concepts.",
+            "notes": "Made flashcards for review.",
+            "startedAt": "2024-11-15T10:00:00Z",
+            "endedAt": "2024-11-15T11:30:00Z",
+            "pauseTime": 10,
+            "topicsStudied": ["Topic 1", "Topic 2"]
+          }
+        ]
       },
       {
         "id": 2,
         "name": "Research for Group Project",
-        "completed": false,
-        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
-        "studySessions": ["Session 1", "Session 2"]
+        "completed": true,
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": true,
+            "notes": "Completed research on genetics for the project."
+          },
+          {
+            "name": "Topic 2",
+            "completed": true,
+            "notes": "Researched ecology and the impact of climate change."
+          },
+          {
+            "name": "Topic 3",
+            "completed": true,
+            "notes": "Finished writing the introduction section."
+          }
+        ],
+        "studySessions": []
       }
     ]
   },
@@ -192,15 +307,24 @@
         "id": 1,
         "name": "Read Chapter 5",
         "completed": false,
-        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
-        "studySessions": ["Session 1", "Session 2"]
-      },
-      {
-        "id": 2,
-        "name": "Prepare for Presentation",
-        "completed": false,
-        "studyTopics": ["Topic 1", "Topic 2", "Topic 3"],
-        "studySessions": ["Session 1", "Session 2"]
+        "studyTopics": [
+          {
+            "name": "Topic 1",
+            "completed": false,
+            "notes": "Focus on feudalism in medieval Europe."
+          },
+          {
+            "name": "Topic 2",
+            "completed": false,
+            "notes": "Study the role of the Catholic Church."
+          },
+          {
+            "name": "Topic 3",
+            "completed": false,
+            "notes": "Understand the political structure of feudal systems."
+          }
+        ],
+        "studySessions": []
       }
     ]
   }

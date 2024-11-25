@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Sidebar from '@/components/sidebar';
 import Header from '@/components/header';
 import SessionList from "@/components/sessionList";
-import SessionModal from '@/components/addSessionModal'; // Import the modal
+import SessionModal from '@/components/sessionModal'; // Import the modal
 
 import styles from '@/styles/sessions.module.css';
 
@@ -55,7 +55,7 @@ const Sessions = () => {
           onClose={toggleModal} 
           onAdd={handleAddSession}
           plans={plans}
-          />
+        />
 
         <div style={{ padding: '50px', display: 'flex', justifyContent: 'center' }}>
           <SessionList sessions={studySessions} />
