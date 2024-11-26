@@ -9,7 +9,7 @@ const CourseModal = ({ isOpen, onClose, onSave, course, terms }) => {
         schedule: '',
         term: '',
         assignments: [],
-        studyPlans: [],
+        plans: [],
     });
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const CourseModal = ({ isOpen, onClose, onSave, course, terms }) => {
                 schedule: course.schedule,
                 term: course.term,
                 assignments: course.assignments,
-                studyPlans: course.studyPlans,
+                plans: course.plans,
             });
         }
     }, [course]);
@@ -28,25 +28,6 @@ const CourseModal = ({ isOpen, onClose, onSave, course, terms }) => {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setCourseData((prevData) => ({ ...prevData, [name]: value }));
-    };
-
-    const handleSave = () => {
-      if (
-          courseData.name.trim() && 
-          courseData.description.trim() && 
-          courseData.schedule.trim() && 
-          courseData.term.trim()
-      ) {
-          const updatedCourse = { 
-              id: course?.id || Date.now(), 
-              ...courseData 
-          };
-  
-          onSave(updatedCourse);
-          handleClose();
-      } else {
-          alert('Please fill in all fields before saving the course.');
-      }
     };
   
     const handleClose = () => {
@@ -56,7 +37,7 @@ const CourseModal = ({ isOpen, onClose, onSave, course, terms }) => {
         schedule: '',
         term: '',
         assignments: [],
-        studyPlans: [],
+        plans: [],
       });
       onClose();
     };
@@ -75,7 +56,7 @@ const CourseModal = ({ isOpen, onClose, onSave, course, terms }) => {
           <form
               onSubmit={(e) => {
                   e.preventDefault();
-                  handleSave();
+                  onSave(courseData);
               }}
           >
             {/* Course Name */}

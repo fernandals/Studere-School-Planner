@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { API_URL } from '@/config';
+
+import axios from 'axios';
 
 import Sidebar from '@/components/sidebar';
 import Header from '@/components/header';
@@ -21,13 +24,35 @@ const Courses = () => {
   const [currentCourse, setCurrentCourse] = useState(null); // To track which course is being edited
   const [currentAssignment, setCurrentAssignment] = useState(null); // To track which assignment is being edited
 
+  const [termList, setTermList] = useState([]);
+
   const closeCourseModal = () => setIsCourseModalOpen(false);
   const closeAssignmentModal = () => setIsAssignmentModalOpen(false);
 
+  useEffect(() => {
+    fetchTerms();
+  }, []);
+
+  const fetchTerms = async () => {
+    try {
+
+      const headers = {
+        "Authorization": `Bearer ${localStorage.getItem('authToken')}`
+      }
+
+      const response = await axios.get(`${API_URL}/terms`, { headers: headers });
+      
+      setTermList(response.data)
+    } catch (err) {
+      console.error('Error fetching terms:', err);
+    } finally {
+      console.log('Terms List', termList);
+    }
+  };
 
   {/* Course Utils */}
   const handleCreateCourse = () => {
-    setCurrentCourse(null);
+    setCurrentCourse(null); 
     setIsCourseModalOpen(true); // Open the modal for creating
   };
 
@@ -36,22 +61,30 @@ const Courses = () => {
     setIsCourseModalOpen(true); // Open the modal for editing
   };
 
-  // no useful code yet
   const handleSaveCourse = async (courseData) => {
     try {
-        if (currentCourse) {
-            // Editing an existing course
-            const updatedCourse = await api.editCourse(currentCourse.id, courseData);
-            setCourses((prevCourses) =>
-                prevCourses.map((course) => (course.id === currentCourse.id ? updatedCourse : course))
-            );
-        } else {
-            // Creating a new course
-            const newCourse = await api.createCourse(courseData);
-            setCourses((prevCourses) => [...prevCourses, newCourse]);
-        }
+      const requestBody = {
+        "name": courseData.name,
+        "description": courseData.description,
+        "schedule": courseData.schedule,
+        "term": courseData.term,
+      }
+
+      console.log(requestBody);
+      
+      const headers = {
+        "Authorization": `Bearer ${localStorage.getItem('authToken')}`
+      }
+
+      const response = await axios.post(`${API_URL}/course`, requestBody, { headers: headers });
+      
+      if (response.status === 201) {
+        alert("Course created successfully");
+        closeCourseModal(); 
+      }
+
     } catch (err) {
-        console.error('Error saving course:', err);
+        console.error('Error saving term:', err);
     }
   };
 
@@ -122,7 +155,7 @@ const Courses = () => {
           onClose={closeCourseModal}
           onSave={handleSaveCourse}
           course={currentCourse}
-          terms={mockTerms}
+          terms={termList}
         />
 
         <AssignmentModal
